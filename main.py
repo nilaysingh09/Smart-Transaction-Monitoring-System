@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Load data
 df = pd.read_csv("transactions.csv")
@@ -16,3 +17,12 @@ print(df)
 
 # Save results
 df.to_csv("output.csv", index=False)
+
+
+
+
+# Visualizations
+
+df["is_suspicious"].value_counts().plot(kind='bar')
+plt.title("Suspicious vs Normal Transactions")
+plt.show()
